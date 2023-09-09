@@ -54,16 +54,23 @@
 </table>
 <hr>
 <h2>Code Display</h2>
-<blockquote cite="https://stackoverflow.com/questions/822452/strip-html-tags-from-text-using-plain-javascript">How to strip off HTML tags from a string using plain JavaScript only, not using a library?</blockquote>
+<blockquote>How to efficiently remove duplicates from an array without using Set? </blockquote>
+<a href="https://stackoverflow.com/questions/822452/strip-html-tags-from-text-using-plain-javascript"></a>
 <pre>
-    const originalString = `
-  <div>
-    <p>Hey that's<span>something</span></p>
-  </div>
-`;
-const strippedString = originalString.replace(/(<([^>]+)>)/gi, "");
-console.log(strippedString);
-<blockquote cite="https://css-tricks.com/snippets/javascript/strip-html-tags-in-javascript/">Strip HTML Tags in JavaScript</blockquote>
+    const array = [1, 1, 1, 3, 3, 2, 2];
+
+// Method 1: Using a Set
+const unique = [...new Set(array)];
+
+// Method 2: Array.prototype.reduce
+const unique = array.reduce((result, element) => {
+  return result.includes(element) ? result : [...result, element];
+}, []);
+
+// Method 3: Array.prototype.filter
+const unique = array.filter((element, index) => {
+  return array.indexOf(element) === index;
+});
 </pre>
 </body>
 </html>
