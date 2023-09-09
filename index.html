@@ -52,5 +52,17 @@
         <td>8</td>
     </tr>
 </table>
+<hr>
+<h2>Code Display</h2>
+<blockquote cite="https://stackoverflow.com/questions/822452/strip-html-tags-from-text-using-plain-javascript"> How to strip off HTML tags from a string using plain JavaScript only, not using a library? </blockquote>
+<pre>
+    const originalString = `
+  <div>
+    <p>Hey that's <span>somthing</span></p>
+  </div>
+`;
+const strippedString = originalString.replace(/(<([^>]+)>)/gi, "");
+console.log(strippedString);
+</pre>
 </body>
 </html>
